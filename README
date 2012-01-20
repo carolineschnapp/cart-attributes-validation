@@ -2,7 +2,9 @@ Use the HTML5 'required' attribute or use the class 'required' on your form fiel
 
   <input type="text" name="attributes[some-info]" value="{{ cart.attributes.some-info }}" placeholder="Some info..." required />
 
-Then upload the jquery.validate.js file to your theme assets. Go to Themes → Template Editor, and under Theme Assets go 'add a new asset'.  Then link to it in your theme.liquid file between <head> and </head> or wherever jQuery is already defined:
+Then upload the jquery.validate.js file to your theme assets. Go to Themes → Template Editor, and under Theme Assets go 'add a new asset'.
+
+Once jquery.validate.js has been uploaded to your theme assets, link to it in your theme.liquid file between <head> and </head> or wherever jQuery is already defined:
 
   {{ 'jquery.validate.js' | asset_url | script_tag }}
 
