@@ -1,7 +1,6 @@
 Use the HTML5 'required' attribute or use the class 'required' on your form field. It makes no difference which of the 2 you use. Go with what you prefer. Example:
 
- <input type="text" name="attributes[some-info]" value="{{ cart.attributes.some-info }}" placeholder="Some info..." required /
-
+ <input type="text" name="attributes[some-info]" value="{{ cart.attributes.some-info }}" placeholder="Some infoÉ" required />
 
 Then upload the jquery.validate.js file to your theme assets. Go to Themes> Template Editor, and under Theme Assets go 'add a new asset'.  Then link to it in your theme.liquid file between <head> and </head> or wherever jQuery is already defined:
 
