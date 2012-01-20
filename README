@@ -1,12 +1,12 @@
 Use the HTML5 'required' attribute or use the class 'required' on your form field. It makes no difference which of the 2 you use. Go with what you prefer. Example:
 
-  <input type="text" name="attributes[some-info]" value="{{ cart.attributes.some-info }}" placeholder="Some info" required />
+  <input type="text" name="attributes[some-info]" value="{{ cart.attributes.some-info }}" placeholder="Some info..." required />
 
-Then upload the jquery.validate.js file to your theme assets. Go to Themes> Template Editor, and under Theme Assets go 'add a new asset'.  Then link to it in your theme.liquid file between <head> and </head> or wherever jQuery is already defined:
+Then upload the jquery.validate.js file to your theme assets. Go to Themes → Template Editor, and under Theme Assets go 'add a new asset'.  Then link to it in your theme.liquid file between <head> and </head> or wherever jQuery is already defined:
 
   {{ 'jquery.validate.js' | asset_url | script_tag }}
 
-Then you are done.
+Then you are done. You'll find theme.liquid in the Layouts section on your Template Editor page.
 
 A field that is in error will be wrapped in a span with class **error**. Also,  span element will be added inside that wrapper, next to the form field in error. That last span will contain some feedback. If it's a text field that is blank, the text will say "This field is required". If it's a checkbox that has not been checked, the text will say "This checkbox is required", If It's a select element that has its <option value="">Please decide on an option, dude</option> selected, the text will say "Please select an option". 
 
