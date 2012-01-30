@@ -17,8 +17,10 @@ Shopify.CartFormValidate = function ($) {
     }     
   };
 
-  var isRequired = function(formField) { 
-    return (formField.attr('required') || formField.is('.required'))
+  var isRequired = function(formField) {
+    return (formField.attr('required') === 'required' 
+        || formField.attr('required') === true 
+        || formField.is('.required'))
   };
 
   var setError = function(formField) {
@@ -74,7 +76,7 @@ Shopify.CartFormValidate = function ($) {
           return;                 
         }
         else {
-          value = $(this).val();
+          var value = $(this).val();
           if (value === '' || value === undefined) {
             if (isRequired($(this))) {
               formIsValid = false;
@@ -87,7 +89,7 @@ Shopify.CartFormValidate = function ($) {
       });
 
       if (formIsValid) {
-        $(this).submit();   
+        $(this).submit();
       } 
       else {
         $('span.error :input:eq(0)').trigger('focus');
