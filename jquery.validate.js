@@ -58,12 +58,12 @@ Shopify.CartFormValidate = function ($) {
   
   $(function() {
     
-    // If the cart form is submitted.
-    $('form[action="/cart"]').bind('submit', function() {
+    // If the checkout button has been pressed.
+    $('input[name="checkout"], input[name="goto_pp"], input[name="goto_gc"]').click(function() {
 
       var formIsValid = true;
 
-      $(this).find('[name^="attributes"]').each(function() {
+      $('form[action="/cart"]').find('[name^="attributes"]').each(function() {
 
         if ($(this).is(':checkbox')) {
           if (!$(this).is(':checked') && isRequired($(this))) {
@@ -89,7 +89,7 @@ Shopify.CartFormValidate = function ($) {
       });
 
       if (formIsValid) {
-        return true;
+        $(this).submit();
       } 
       else {
         $('span.error :input:eq(0)').trigger('focus');
