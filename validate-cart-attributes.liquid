@@ -8,7 +8,7 @@ jQuery(function() {
       jQuery(this).removeClass('error');
       if (formIsValid && jQuery(this).val() == '') {
         formIsValid = false;
-        message = jQuery(this).attr('data-error');
+        message = jQuery(this).attr('data-error') || message;
         jQuery(this).addClass('error');
       }
     });
