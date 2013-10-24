@@ -4,7 +4,7 @@ jQuery(function() {
   jQuery('input[name="checkout"], input[name="goto_pp"], input[name="goto_gc"]').click(function() {
     var formIsValid = true;
     var message = "Please fill this out and you will be able to check out.";
-    jQuery('[name^="attributes"]').filter('.required, [required="required"]').each(function() {
+    jQuery('[name^="attributes"], [name="note"]').filter('.required, [required="required"]').each(function() {
       jQuery(this).removeClass('error');
       if (formIsValid && jQuery(this).val() == '') {
         formIsValid = false;
