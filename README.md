@@ -5,7 +5,7 @@ Use the HTML5 'required' attribute or use the class 'required' on your form fiel
 
 ```
 
-Or:
+... or:
 
 ```liquid
 <input type="text" name="attributes[some-info]" value="{{ cart.attributes.some-info }}" required>
