@@ -1,7 +1,7 @@
 {% if template == 'cart' %}
 <script>
 jQuery(function() {
-  jQuery('input[name="checkout"], input[name="goto_pp"], input[name="goto_gc"]').click(function() {
+  jQuery('body').on('click', '[name="checkout"], [name="goto_pp"], [name="goto_gc"]', function() {
     var formIsValid = true;
     var message = "Please fill this out and you will be able to check out.";
     jQuery('[name^="attributes"], [name="note"]').filter('.required, [required="required"]').each(function() {
