@@ -1,0 +1,15 @@
+<script>
+jQuery(window).unload(function() {
+  var cartForm = jQuery('form[action="/cart"]');
+  if (cartForm.size()) {
+    var params = {
+      type: 'POST',
+      url: '/cart/update.js',
+      data: cartForm.serialize(),
+      dataType: 'json',
+      async: false
+    };
+    jQuery.ajax(params);
+  }
+});
+</script>
